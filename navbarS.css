@@ -19,8 +19,8 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 10%;
-    /* border: solid; */
+    padding: 10px 10%;
+    border: solid;
 }
 
 .nav_links{
@@ -28,8 +28,15 @@ header{
 }
 
 .nav_links li{
+    overflow: hidden;
     display: inline-block;
     padding: 0px 20px;
+}
+
+li > div{
+    position: relative;
+    border: solid;
+    color: red;
 }
 
 .nav_links li a {
