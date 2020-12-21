@@ -24,10 +24,12 @@ header{
 }
 
 .nav_links{
-    list-style: none;   
+    list-style: none; 
+    overflow: hidden;
 }
 
 .nav_links li{
+    vertical-align: middle;
     display: inline-block;
     padding: 0px 20px;
 }
@@ -62,50 +64,64 @@ button:hover{
     justify-content: space-between;
 }
 
-
 .container-sub-menu {
-    overflow: hidden;
-    /* position: relative; */
-    /* border: solid; */
-    max-height: 0;
-    transition: max-height 0.3s ease;
+    width: 100%;
+    height: 0%;
+    /* transition: max-height 0.3s ease; */
+    transition: all 0.3s ease 0s;
 }
 
 .sub-menu-ul {
-    display: flex;
+    visibility: hidden;
+    width: 100%;
+    height: 0%;
+    /* display: flex;
     flex-direction: column;
-    padding-right: 1rem;
+    padding-right: 1rem; */
 }
 
-.sub-menu-ul .nav-menu-item {
-    display: flex;
-    flex-direction: column;
+.sub-menu-ul > li{
+    display: block;
+    list-style: none;    
 }
 
-/* .sub-menu-ul .nav-menu-link {
-    padding: 16px;
-    font-weight: normal;
+.nav_links > .nav-menu-item {
+    
+    position: absolute;
+    height: 5%;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+/* .sub-menu-ul > .nav-menu-link {
+    visibility: hidden;
 } */
 
 .nav-menu-item:hover > .container-sub-menu {
-    width: 400px;
-    height: 500px;
+    /* border: solid; */
+    visibility: visible;
+    position: absolute;
+    width: 200%;
+    height: 400%;
+    left: 0%;
+    top: 100%;
     /* background: var(--dark-lighten); */
-    padding: 1rem;
+    /* padding: 1rem;
     position: absolute;
     top: 56px;
     display: flex;
     flex-wrap: wrap;
-    -moz-box-shadow: 1px 6px 18px rgba(94, 94, 94, 0.5);
+    -moz-box-shadow: 1px 6px 18px rgba(94, 94, 94, 0.5); */
     /*FF 3.5+*/
-    -webkit-box-shadow: 1px 6px 18px rgba(94, 94, 94, 0.5);
+    /* -webkit-box-shadow: 1px 6px 18px rgba(94, 94, 94, 0.5); */
     /*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
-    box-shadow: 1px 6px 18px rgba(94, 94, 94, 0.5);
+    /* box-shadow: 1px 6px 18px rgba(94, 94, 94, 0.5); */
     /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
 }
 
-
-
+.nav-menu-item:hover .sub-menu-ul{
+    visibility: visible;
+}
 
 /* -------- Ejemplo positions ------------*/
 
@@ -143,3 +159,54 @@ button:hover{
     height: 100px;
     background-color: white;
 }
+
+
+.caja1{
+    /* border: solid; */
+    display: inline-block;
+    padding: 10px;
+    width: 100px;
+    height: 110px;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.caja2{
+    position: absolute;
+    top: 0%;
+    left: 100%;
+    border: solid;
+    border-color: red;
+    display: inline-block;
+    width: 0%;
+    height: 0%;
+    transition: all 0.3s ease 0s;
+    /* padding: 10px; */
+}
+
+.caja1:hover{
+    background-color: green;
+    /* overflow: visible; */
+}
+
+.caja1:hover > .caja2{
+    background-color: indigo;
+    width: 100%;
+    height: 100%;
+}
+
+.sub-menu{
+    border: solid;
+    visibility: hidden;
+}
+
+.sub-menu > li{
+    display: block;
+    list-style: none;
+    background-color: green;
+}
+
+.caja1:hover .sub-menu{
+    visibility: visible;
+}
+
