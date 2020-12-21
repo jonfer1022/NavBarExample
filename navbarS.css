@@ -19,7 +19,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 10%;
+    padding: 15px 10%;
     border: solid;
 }
 
@@ -28,15 +28,8 @@ header{
 }
 
 .nav_links li{
-    overflow: hidden;
     display: inline-block;
     padding: 0px 20px;
-}
-
-li > div{
-    position: relative;
-    border: solid;
-    color: red;
 }
 
 .nav_links li a {
@@ -58,4 +51,95 @@ button{
 
 button:hover{
     background-color: rgba(0,136,169,0.8);
+}
+
+.nav-menu-link {
+    color: var(--dark-light);
+    text-decoration: none;
+    display: block;
+    padding: 3%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.container-sub-menu {
+    overflow: hidden;
+    /* position: relative; */
+    /* border: solid; */
+    max-height: 0;
+    transition: max-height 0.3s ease;
+}
+
+.sub-menu-ul {
+    display: flex;
+    flex-direction: column;
+    padding-right: 1rem;
+}
+
+.sub-menu-ul .nav-menu-item {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .sub-menu-ul .nav-menu-link {
+    padding: 16px;
+    font-weight: normal;
+} */
+
+.nav-menu-item:hover > .container-sub-menu {
+    width: 400px;
+    height: 500px;
+    /* background: var(--dark-lighten); */
+    padding: 1rem;
+    position: absolute;
+    top: 56px;
+    display: flex;
+    flex-wrap: wrap;
+    -moz-box-shadow: 1px 6px 18px rgba(94, 94, 94, 0.5);
+    /*FF 3.5+*/
+    -webkit-box-shadow: 1px 6px 18px rgba(94, 94, 94, 0.5);
+    /*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+    box-shadow: 1px 6px 18px rgba(94, 94, 94, 0.5);
+    /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+}
+
+
+
+
+/* -------- Ejemplo positions ------------*/
+
+.padre{
+    width: 250px;
+    height: 250px;
+    margin : 25px;
+    background-color: orange;
+    /* position: relative; */
+}
+
+/* .padre > div{
+    display: inline-block;
+    vertical-align: middle;
+} */
+
+.hijo1{
+    /* position: static; Valor por defecto, y ubica al objeto en la esquina superior izquierda, además de no tener en cuenta las coordenadas */
+    /* position: relative; relative: ubica el objeto hijo en las coordenadas ingresadas respecto al objeto padre */
+    /* top: 50px;
+    left: 120px; */
+    /* position: absolute; absolute: hace parecer que el objeto no interactua con los demás objetos en cuestión de posicionamiento, además se ubica respecto al primer padre que tenga un position diferente a absolute */
+    /* top: 0px; */
+    position: fixed; /*fixes: las coordenadas del objeto se ubican respecto al body*/
+    top: 0px;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+}
+
+.hijo2{
+    /* top: 50px;
+    left: 120px; */
+    width: 100px;
+    height: 100px;
+    background-color: white;
 }
