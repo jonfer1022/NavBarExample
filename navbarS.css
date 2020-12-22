@@ -20,17 +20,15 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 15px 10%;
-    border: solid;
-}
-
-.nav_links{
-    list-style: none; 
-    overflow: hidden;
+    /* border: solid; */
 }
 
 .nav_links li{
     vertical-align: middle;
     display: inline-block;
+}
+
+.nav_links > li{
     padding: 0px 20px;
 }
 
@@ -64,63 +62,11 @@ button:hover{
     justify-content: space-between;
 }
 
-.container-sub-menu {
-    width: 100%;
-    height: 0%;
-    /* transition: max-height 0.3s ease; */
-    transition: all 0.3s ease 0s;
-}
-
-.sub-menu-ul {
-    visibility: hidden;
-    width: 100%;
-    height: 0%;
-    /* display: flex;
-    flex-direction: column;
-    padding-right: 1rem; */
-}
-
-.sub-menu-ul > li{
-    display: block;
-    list-style: none;    
-}
-
-.nav_links > .nav-menu-item {
-    
+.nav_links > .nav-menu-item { 
     position: absolute;
     height: 5%;
     /* display: flex;
     flex-direction: column; */
-}
-
-/* .sub-menu-ul > .nav-menu-link {
-    visibility: hidden;
-} */
-
-.nav-menu-item:hover > .container-sub-menu {
-    /* border: solid; */
-    visibility: visible;
-    position: absolute;
-    width: 200%;
-    height: 400%;
-    left: 0%;
-    top: 100%;
-    /* background: var(--dark-lighten); */
-    /* padding: 1rem;
-    position: absolute;
-    top: 56px;
-    display: flex;
-    flex-wrap: wrap;
-    -moz-box-shadow: 1px 6px 18px rgba(94, 94, 94, 0.5); */
-    /*FF 3.5+*/
-    /* -webkit-box-shadow: 1px 6px 18px rgba(94, 94, 94, 0.5); */
-    /*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
-    /* box-shadow: 1px 6px 18px rgba(94, 94, 94, 0.5); */
-    /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
-}
-
-.nav-menu-item:hover .sub-menu-ul{
-    visibility: visible;
 }
 
 /* -------- Ejemplo positions ------------*/
@@ -210,3 +156,65 @@ button:hover{
     visibility: visible;
 }
 
+/*--------------------------*/
+
+.nav_links{
+    list-style: none; 
+    /* overflow: hidden; */
+}
+
+.nav_links > .nav-item{
+    position: relative;
+}
+
+.container-sub-menu{
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 150%;
+    height: 0%;
+    transition: all 0.2s ease 0s;
+}
+
+.nav-item:hover > .container-sub-menu{
+    visibility: visible;
+    height: 200%;
+    background: var(--dark-lighten);
+    background-color: tan;
+}
+
+/* .nav-item:hover .sub-menu-ul{
+    height: 100%;
+} */
+
+/* .nav-item:hover .nav-item{
+    height: 100%;
+} */
+
+/* .nav-item:hover .sub-menu-link{
+    height: 100%;
+} */
+
+.sub-menu-ul{
+    text-align: center;
+    /* height: 0%; */
+}
+
+.sub-menu-ul > .nav-item{
+    text-decoration: none;
+    background-color: tan;
+    list-style: none;
+    /* height: 0%; */
+}
+
+.sub-menu-ul > li{
+    display: block;
+    list-style: none;
+}
+
+.sub-menu-link{
+    display: block;
+    background-color: darkgray;
+    /* height: 0%; */
+}
